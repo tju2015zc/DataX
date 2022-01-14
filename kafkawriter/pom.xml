@@ -9,12 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>kafkareader</artifactId>
+    <artifactId>kafkawriter</artifactId>
     <groupId>com.alibaba.datax</groupId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>kafkareader</name>
+    <name>kafkawriter</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -77,7 +77,7 @@
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
-                    <descriptors> <!--描述文件路径-->
+                    <descriptors>
                         <descriptor>src/main/assembly/package.xml</descriptor>
                     </descriptors>
                     <finalName>datax</finalName>
@@ -85,9 +85,9 @@
                 <executions>
                     <execution>
                         <id>dwzip</id>
-                        <phase>package</phase> <!-- 绑定到package生命周期阶段上 -->
+                        <phase>package</phase>
                         <goals>
-                            <goal>single</goal> <!-- 只运行一次 -->
+                            <goal>single</goal>
                         </goals>
                     </execution>
                 </executions>

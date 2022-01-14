@@ -1,0 +1,38 @@
+package com.alibaba.datax.plugin.writer.kafkawriter;
+
+import com.alibaba.datax.common.spi.ErrorCode;
+
+/**
+ * @author Peter
+ * @createTime Created in 2022/1/10 20:31
+ * @description:
+ */
+
+public enum KafkaWriterErrorCode implements ErrorCode {
+
+    REQUIRED_VALUE("KafkaWriter-00", "缺失必须填写的参数值."),
+    CREATE_TOPIC("KafkaWriter-01", "写入数据前检查topic或创建topic失败.");
+
+    private final String code;
+    private final String description;
+
+    private KafkaWriterErrorCode(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
+
+    @Override
+    public String getCode() {
+        return this.code;
+    }
+
+    @Override
+    public String getDescription() {
+        return this.description;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Code:[%s], Description:[%s].", this.code, this.description);
+    }
+}
